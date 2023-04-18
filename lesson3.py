@@ -143,3 +143,6 @@
 # print(bin(7))
 # print(128 & 127)
 # print(bin(32).count('0') - 1)
+a = 2
+
+a *= 2
