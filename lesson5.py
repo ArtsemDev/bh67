@@ -241,3 +241,18 @@
 # 22 24 26 28 30
 # 32 34 36 38 40
 # 42 44
+
+
+# objs = [
+# 	[1, 2, 3],
+# 	[4, 5, 6]
+# ]
+
+# for i in objs:
+# 	i.append(0)
+# print(objs)
+
+# words = ['hello', 'word']
+# for word in words:
+# 	word = word.upper()
+# print(words)
