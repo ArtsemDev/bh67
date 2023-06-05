@@ -4,6 +4,8 @@ from typing import Optional, List, Type
 from sqlalchemy import Column, INT, VARCHAR, TIMESTAMP, ForeignKey, TEXT, BOOLEAN, create_engine, DECIMAL
 from sqlalchemy.orm import DeclarativeBase, declared_attr, sessionmaker, relationship
 from sqlalchemy.exc import IntegrityError
+from sqlalchemy.sql.functions import count
+from sqlalchemy.ext.asyncio import create_async_engine, async_sessionmaker
 
 
 class Base(DeclarativeBase):
@@ -196,3 +198,10 @@ from csv import DictReader, DictWriter
 #         data.append(post)
 #     writer.writeheader()
 #     writer.writerows(data)
+
+
+with Category.session() as session:
+    objs = session.scalar(
+        select(count(Category.id))
+    )
+    print(objs)
